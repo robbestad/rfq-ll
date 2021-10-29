@@ -38,13 +38,11 @@ const lastlookFilter = {
 const rfqFilter = {
   address: lightDeploys[chainId],
   topics: [
+    lightContract.Swap,
     null,
-    null,
-//@ts-ignore
-    ethers.utils.hexZeroPad(ACCOUNT!.toString(),32)
+    null
   ],
 }
-//@ts-ignore
 lightContract.on(rfqFilter, async (tx) => {
   console.log("rfqFilter",tx)
 })
