@@ -20,7 +20,6 @@ const lightContract = new Contract(
   LightContract.abi,
   provider
 );
-const wrapContract = new Contract(wrapDeploys[4], WrapContract.abi, provider);
 
 let accountFilter = {
   address: lightDeploys[4].address,
