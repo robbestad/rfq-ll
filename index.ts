@@ -20,13 +20,20 @@ const lightContract = new Contract(
   LightContract.abi,
   provider
 );
+console.log("light contract address",lightDeploys[4])
 
 let accountFilter = {
   address: lightDeploys[4].address,
   topics: [lightContract.Swap, null, null],
 };
-const contract = "0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea";
-const senderWallet = "0x63CF6013aaB710Ca21F1404f71d37111d7F928a8";
+const rfqFilter = {
+  address: lightDeploys[chainId],
+  topics: [lightContract.Swap, null, null,    ethers.utils.hexZeroPad(ACCOUNT!.toString(), 32)],
+};
+lightContract.on(rfqFilter, async (tx) => {
+  console.log("rfqFilter");
+});
+
 const lastlookFilter = {
   address: lightDeploys[chainId],
   topics: [
@@ -35,24 +42,16 @@ const lastlookFilter = {
     ethers.utils.hexZeroPad(ACCOUNT!.toString(), 32),
   ],
 };
-const rfqFilter = {
-  address: lightDeploys[chainId],
-  topics: [lightContract.Swap, null, null],
-};
-
-lightContract.on(rfqFilter, async (tx) => {
-  console.log("rfqFilter");
-});
-
 lightContract.on(lastlookFilter, async (tx) => {
   console.log("lastlookFilter");
 });
 
-const wrapContract = new Contract(wrapDeploys[4], WrapContract.abi, provider);
-const wrapFilter = {
-  address: wrapDeploys[chainId],
-  topics: [wrapContract.OwnershipTransferred, null],
+const filterAddress = ethers.utils.hexZeroPad(wrapDeploys[chainId], 32)
+const transferFilter = {
+  address: lightDeploys[chainId],
+  topics: [lightContract.Transfer, null, null,filterAddress],
 };
-wrapContract.on(wrapFilter, async (tx) => {
-  console.log("wrapFilter", tx);
+lightContract.on(transferFilter, async (tx) => {
+  console.log("transferFilter",tx);
 });
+
