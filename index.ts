@@ -49,6 +49,7 @@ lightContract.on(lastlookFilter, async (tx) => {
   console.log("lastlookFilter");
 });
 
+const wrapContract = new Contract(wrapDeploys[4], WrapContract.abi, provider);
 const wrapFilter = {
   address: wrapDeploys[chainId],
   topics: [wrapContract.OwnershipTransferred, null],
