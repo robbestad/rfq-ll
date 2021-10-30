@@ -2,6 +2,7 @@
   "dependencies": {
     "@airswap/light": "^2.3.1",
     "@airswap/protocols": "0.5.5",
+    "@airswap/wrapper": "^1.4.1",
     "ethers": "^5.5.1",
     "typescript": "^4.4.4",
     "web3": "^1.6.0"

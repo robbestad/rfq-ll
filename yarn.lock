@@ -137,6 +137,13 @@
     "@airswap/types" "3.5.10"
     openzeppelin-solidity "2.4"
 
+"@airswap/wrapper@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@airswap/wrapper/-/wrapper-1.4.1.tgz#d564afbf8713f3f65ebd155a5c7a3fffea3cf946"
+  integrity sha512-e/zOG2S8Eg64oMU5u9lnFyLFH1k/h52bX4JduGypp9kaK/JXRtcO8yYWCY//zejsrIXhTPHO0JiNcTyUiOSEPg==
+  dependencies:
+    "@openzeppelin/contracts" "^4.3.1"
+
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
   resolved "https://registry.npmjs.org/@cspotcode/source-map-consumer/-/source-map-consumer-0.8.0.tgz"
