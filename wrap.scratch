@@ -1,0 +1,11 @@
+const wrapFilter = {
+  address: wrapDeploys[chainId],
+  topics: [
+    wrapContract.Swap, 
+    null
+  ],
+}
+lightContract.on(wrapFilter, async (tx) => {
+  console.log("wrapperFilter 2")
+});
+
