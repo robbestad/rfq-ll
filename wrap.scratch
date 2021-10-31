@@ -9,3 +9,5 @@ lightContract.on(wrapFilter, async (tx) => {
   console.log("wrapperFilter 2")
 });
 
+id("Swap(uint256,uint256,address,address,uint256,uint256,address,address,uint256)")
+import * as LightContract from "@airswap/light/build/contracts/Light.sol/Light.json";
