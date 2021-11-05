@@ -1,0 +1,8 @@
+{
+    "wallet": {
+        "tokenBalances": "Token Balances"
+    },
+    "order": {
+        "swapFailed": "Swap Failed"
+    }
+}
