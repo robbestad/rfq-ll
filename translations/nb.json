@@ -1,1 +1,8 @@
-
+{
+    "wallet": {
+        "tokenBalances": "Tokenbalanser"
+    },
+    "order": {
+        "swapFailed": "Veksling feilet"
+    }
+}
